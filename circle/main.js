@@ -41,7 +41,6 @@ elipses.push(new ElipseStatic(256));
 let rotation = 0;
 const animate = () => {
   context.clearRect(0, 0, canvas.width, canvas.height);
-  context.fillStyle = "red";
   context.strokeStyle = "white";
   context.lineWidth = 2;
   elipses.forEach((element) => {
@@ -52,6 +51,7 @@ const animate = () => {
     context.stroke();
   });
   rotation += 0.004;
+  rotation %= Math.PI * 2;
   requestAnimationFrame(animate);
 };
 animate();
