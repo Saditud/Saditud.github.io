@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" rel="stylesheet" href="./style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet" />
+    <title>Pixel - Generator</title>
+  </head>
+
+  <body>
+    <canvas id="canvas1"></canvas>
+    <header id="menu" class="wrap_up">
+      <div>
+        <h1>Pixels</h1>
+        <h1>Generator</h1>
+      </div>
+      <div id="element">
+        <span></span>
+        <div>
+          <label for="size">size</label>
+          <input type="number" min="1" name="size" size="5em" id="input_size" class="reload_on_change" />
+        </div>
+
+        <select id="slt_filling" class="reload_on_change">
+          <option value="random">Random</option>
+          <option value="rainbow">Rainbow</option>
+          <option value="static">Static Colors</option>
+          <option value="b&w">Black & White</option>
+          <option value="color">Color Picker</option>
+        </select>
+
+        <div id="random" class="filling_selection"></div>
+
+        <div id="rainbow" class="filling_selection">
+          <label for="spread">spread</label>
+          <input type="number" min="0" name="spread" size="3em" id="input_spread" class="reload_on_change" />
+          <br />
+        </div>
+
+        <div id="static" class="filling_selection">
+          <div>
+            <input type="checkbox" name="red" class="reload_on_change chk_colors" />
+            <label for="red">red</label>
+          </div>
+          <div>
+            <input type="checkbox" name="green" class="reload_on_change chk_colors" />
+            <label for="green">green</label>
+          </div>
+          <div>
+            <input type="checkbox" name="blue" class="reload_on_change chk_colors" />
+            <label for="blue">blue</label>
+          </div>
+        </div>
+
+        <div id="b&w" class="filling_selection"></div>
+
+        <div id="color" class="filling_selection">
+          <input type="color" size="5em" id="input_colorpick" class="reload_on_change" />
+        </div>
+
+        <div>
+          <label for="drawingsize">drawing size</label>
+          <input type="number" min="1" name="drawingsize" size="5em" id="input_drawing_size" />
+        </div>
+
+        <select id="slt_drawing">
+          <option value="color2">color picker</option>
+          <option value="random">random</option>
+          <option value="rainbow2">rainbow</option>
+        </select>
+
+        <div id="color2" class="drawing_selection">
+          <input type="color" size="5em" id="input_colorpick_drawing" />
+        </div>
+
+        <div id="random" class="drawing_selection"></div>
+
+        <div id="rainbow2" class="drawing_selection">
+          <label for="spread2">spread</label>
+          <input type="number" min="0" name="spread2" size="3em" id="input_spread_drawing" />
+        </div>
+
+        <div>
+          <a href="#" id="lk_reset">↺</a>
+        </div>
+        <span></span>
+      </div>
+      <a href="#" id="lk_wrap"><</a>
+    </header>
+  </body>
+
+  <script src="./main.js"></script>
+</html>
