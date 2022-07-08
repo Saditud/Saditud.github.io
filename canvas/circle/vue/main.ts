@@ -1,14 +1,11 @@
-"use strict";
-const canvas = document.getElementById("canvas1");
+const canvas = <HTMLCanvasElement>document.getElementById("canvas1");
 const context = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+
 class Elipse {
-  constructor(turnposition, clockwise = true) {
-    this.turnposition = turnposition;
-    this.clockwise = clockwise;
-  }
-  update() {
+  constructor(public turnposition: number, public clockwise = true) {}
+  update(): void {
     if (this.clockwise) {
       if (this.turnposition <= 0) {
         this.clockwise = false;
@@ -24,13 +21,15 @@ class Elipse {
     }
   }
 }
+
 class ElipseStatic extends Elipse {
-  constructor(turnposition) {
+  constructor(turnposition: number) {
     super(turnposition);
   }
-  update() {}
+  update(): void {}
 }
-const elipses = [];
+
+const elipses: Elipse[] = [];
 const nbeli = 6;
 for (let i = 0; i < nbeli; i++) {
   let posi = Math.round(((256 * 2) / nbeli) * i);
@@ -38,8 +37,9 @@ for (let i = 0; i < nbeli; i++) {
   else elipses.push(new Elipse(posi));
 }
 elipses.push(new ElipseStatic(256));
+
 let rotation = 0;
-const animate = () => {
+const animate = (): void => {
   context.clearRect(0, 0, canvas.width, canvas.height);
   context.strokeStyle = "white";
   context.lineWidth = 2;
@@ -54,4 +54,5 @@ const animate = () => {
   rotation %= Math.PI * 2;
   requestAnimationFrame(animate);
 };
+
 animate();
