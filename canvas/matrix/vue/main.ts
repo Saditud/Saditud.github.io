@@ -40,12 +40,6 @@ function init(nbChains: number){
     chains.push(new Chain());
 }
 
-function wait(delay: number) {
-  const time = new Date();
-  time.setMilliseconds(time.getMilliseconds() + delay);
-  while (time >= new Date()) {}
-}
-
 function animate() {
   context.fillStyle = "rgba(0, 0, 0, 0.06)";
   context.fillRect(0, 0, canvas.width, canvas.height);
@@ -53,9 +47,7 @@ function animate() {
     element.update();
     element.draw();
   });
-  wait(10)
-  requestAnimationFrame(animate);
 }
 
 init(20);
-animate();
+setInterval(animate, 25);
