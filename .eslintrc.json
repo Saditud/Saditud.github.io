@@ -1,0 +1,50 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "airbnb-base"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "no-restricted-globals": "off",
+        "consistent-return": "off", // pour les return 
+        "no-return-assign": "off", // empecher les return auto
+        "prefer-const": "off", // ne pas mettre const au lieu de let
+        "no-param-reassign": "off", // pouvoir reassigner les variable
+        "block-scoped-var": "off", // ne pas bloquer les var
+        "no-undef": "off", // à voir
+        "@typescript-eslint/no-unused-vars": "warn", // chiant pour notre projet
+        "no-unused-vars": "warn", // chiant pour notre projet
+        "no-plusplus": "off", //pouvoir laisser les "++"
+        "no-var": "off", // laisser les var
+        "vars-on-top": "off", //ne pas etre obligé de déclarer les var en haut
+        "indent": [
+            "error",
+            4
+        ], // nb espace par indent
+        "no-console": "off", // a remove pour les console.log()
+        "no-mixed-spaces-and-tabs": "off", //pas mélanger space et tab
+        "linebreak-style": "off", //empecher le bug quand on change de linux/ window
+        "class-methods-use-this": "off", // laisser les this normaux
+        "no-empty": "off", // empty braces
+        "no-constant-condition": "off", // laisser les while(true)
+        "nonblock-statement-body-position": [
+            "error",
+            "below"
+        ], // si une ligne après condition alors en dessous
+        "curly": "off", // enlève les {} si condition à une ligne
+        "no-useless-constructor": "off", // clc
+        "no-empty-function": "off", // la même
+        "no-bitwise": "off",
+        "max-classes-per-file": "off"
+    }
+}
