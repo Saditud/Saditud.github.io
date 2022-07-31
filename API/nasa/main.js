@@ -18,5 +18,5 @@ function main() {
         document.getElementById('description').textContent = data.explanation;
     })()
 }
-document.getElementById('date').addEventListener('change', () => main());
+document.getElementById('date').addEventListener('change', main);
 init();
