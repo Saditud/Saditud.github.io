@@ -69,7 +69,7 @@ function main() {
     canvas.onmousedown = () => (isDrawing = true);
     canvas.onmouseup = () => (isDrawing = false);
     canvas.onmousemove = (e) => {
-        const drawingSize = +(<HTMLInputElement>document.getElementById('input_drawingSize')).value;
+        const drawingSize = +(<HTMLInputElement>document.getElementById('input_drawing_size')).value;
         if (!isDrawing || drawingSize <= 0)
             return;
         let X = e.clientX << 0;
@@ -100,7 +100,7 @@ function main() {
     };
 }
 
-function init() {
+/* function init() {
     // à voir si je laisse ou je mets dans l'HTML
     (<HTMLInputElement>document.getElementById('input_size')).value = '40';
     (<HTMLInputElement>document.getElementById('input_drawingSize')).value = '40';
@@ -108,7 +108,7 @@ function init() {
     (<HTMLInputElement>document.getElementById('input_spread_drawing')).value = '2';
     main();
 }
-init();
+init(); */
 
 (<HTMLSelectElement>document.getElementById('slt_drawing')).addEventListener('change', () => {
     (<NodeListOf<HTMLDivElement>>document.querySelectorAll('.drawing_selection')).forEach((element) => (element.hidden = true));
@@ -116,7 +116,7 @@ init();
     (<HTMLDivElement>document.getElementById(drawingChoise)).hidden = false;
 });
 (<HTMLInputElement>document.getElementById('input_size')).addEventListener('change', () => {
-    (<HTMLInputElement>document.getElementById('input_drawingSize')).value = (<HTMLInputElement>document.getElementById('input_size')).value;
+    (<HTMLInputElement>document.getElementById('input_drawing_size')).value = (<HTMLInputElement>document.getElementById('input_size')).value;
     main();
 });
 (<NodeListOf<HTMLElement>>document.querySelectorAll('.reload_on_change')).forEach((element) => {
@@ -139,3 +139,5 @@ let menuShow = true;
     }
     menuShow = !menuShow;
 });
+
+main();

@@ -64,7 +64,7 @@ function main() {
     canvas.onmousedown = () => (isDrawing = true);
     canvas.onmouseup = () => (isDrawing = false);
     canvas.onmousemove = (e) => {
-        const drawingSize = +document.getElementById('input_drawingSize').value;
+        const drawingSize = +document.getElementById('input_drawing_size').value;
         if (!isDrawing || drawingSize <= 0)
             return;
         let X = e.clientX << 0;
@@ -94,22 +94,22 @@ function main() {
         context.fill();
     };
 }
-function init() {
+/* function init() {
     // à voir si je laisse ou je mets dans l'HTML
-    document.getElementById('input_size').value = '40';
-    document.getElementById('input_drawingSize').value = '40';
-    document.getElementById('input_spread').value = '2';
-    document.getElementById('input_spread_drawing').value = '2';
+    (<HTMLInputElement>document.getElementById('input_size')).value = '40';
+    (<HTMLInputElement>document.getElementById('input_drawingSize')).value = '40';
+    (<HTMLInputElement>document.getElementById('input_spread')).value = '2';
+    (<HTMLInputElement>document.getElementById('input_spread_drawing')).value = '2';
     main();
 }
-init();
+init(); */
 document.getElementById('slt_drawing').addEventListener('change', () => {
     document.querySelectorAll('.drawing_selection').forEach((element) => (element.hidden = true));
     const drawingChoise = document.getElementById('slt_drawing').value;
     document.getElementById(drawingChoise).hidden = false;
 });
 document.getElementById('input_size').addEventListener('change', () => {
-    document.getElementById('input_drawingSize').value = document.getElementById('input_size').value;
+    document.getElementById('input_drawing_size').value = document.getElementById('input_size').value;
     main();
 });
 document.querySelectorAll('.reload_on_change').forEach((element) => {
@@ -132,4 +132,5 @@ document.querySelector('#lk_wrap').addEventListener('click', () => {
     }
     menuShow = !menuShow;
 });
+main();
 //# sourceMappingURL=main.js.map

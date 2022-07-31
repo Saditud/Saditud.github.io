@@ -20,6 +20,7 @@ function getTimeLeft(end: Date, today: Date) {
 
 let start = new Date('06/20/2022');
 let end = new Date('09/02/2022');
+// vacances
 
 function formatDate(date: string) {
     const tmp = date.split('/').map((element) => (element.length <= 1

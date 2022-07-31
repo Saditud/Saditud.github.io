@@ -11,7 +11,8 @@ function main() {
 }
 function init() {
     const today = new Date();
-    const str = `${today.getFullYear()}-${(() => (today.getMonth() < 10 ? `0${today.getMonth()}` : today.getMonth()))()}-${(() => (today.getDate() < 10 ? `0${today.getDate()}` : today.getDate()))()}`;
+    const putZero = (str: number): string => (`${str}`.length === 1 ? `0${str}` : `${str}`);
+    const str = `${today.getFullYear()}-${putZero(today.getMonth() + 1)}-${putZero(today.getDate())}`;
     (<HTMLInputElement>document.getElementById('date')).value = str;
     main();
 }
