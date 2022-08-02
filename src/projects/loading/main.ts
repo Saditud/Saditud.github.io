@@ -19,6 +19,7 @@ function getTimeLeft(end: Date, today: Date) {
 }
 
 let start = new Date('06/20/2022');
+let today = new Date();
 let end = new Date('09/02/2022');
 // vacances
 
@@ -29,19 +30,39 @@ function formatDate(date: string) {
     return `${tmp[2]}-${tmp[0]}-${tmp[1]}`;
 }
 
+/* [...<HTMLCollectionOf<HTMLInputElement>>document.getElementsByClassName('input-date')]
+    .forEach((element, index) => {
+        element.value = formatDate(tab[index].toLocaleDateString());
+        element.addEventListener(
+            'change',
+            (e) => tab[index] = new Date((<HTMLInputElement>e.target).value),
+        );
+    }); */
+
+const todayElement = <HTMLInputElement>document.getElementById('today');
+todayElement.value = formatDate(today.toLocaleDateString());
+todayElement.addEventListener(
+    'change',
+    (e) => today = new Date((<HTMLInputElement>e.target).value),
+);
 const startElement = <HTMLInputElement>document.getElementById('start');
-const endElement = <HTMLInputElement>document.getElementById('end');
-
 startElement.value = formatDate(start.toLocaleDateString());
-startElement.addEventListener('change', (e) => start = new Date((<HTMLInputElement>e.target).value));
-
+startElement.addEventListener(
+    'change',
+    (e) => start = new Date((<HTMLInputElement>e.target).value),
+);
+const endElement = <HTMLInputElement>document.getElementById('end');
 endElement.value = formatDate(end.toLocaleDateString());
-endElement.addEventListener('change', (e) => end = new Date((<HTMLInputElement>e.target).value));
+endElement.addEventListener(
+    'change',
+    (e) => end = new Date((<HTMLInputElement>e.target).value),
+);
+
+// A refaire
 
 setInterval(() => {
     const bar = document.getElementById('bar');
     const remain = document.getElementById('remain');
-    const today = new Date();
     if (today < start) {
         bar.style.width = '0%';
         remain.textContent = 'Not Started Yet';
