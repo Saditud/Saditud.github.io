@@ -481,7 +481,7 @@ canvas.height = window.innerHeight;
 class Snake {
     constructor(color) {
         this.color = color;
-        this.size = 10;
+        this.size = 6;
         /*
         public color = `#${Array(6).fill('')
             .map(() => (Math.random() * 0xF << 0).toString(16))
@@ -500,9 +500,10 @@ class Snake {
         context.fill();
     }
 }
+const nbSnakes = 10;
 const Snakes = [];
-for (let i = 0; i < 300; i++)
-    Snakes.push(new Snake(`hsl(${(360 / 300) * i}, 70%, 50%)`));
+for (let i = 0; i < nbSnakes; i++)
+    Snakes.push(new Snake(`hsl(${Math.random() * 1000 + ((360 / nbSnakes) * i)}, 70%, 50%)`));
 let time = 0;
 const animate = () => {
     Snakes.forEach((element) => {
