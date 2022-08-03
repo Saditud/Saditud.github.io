@@ -61,6 +61,7 @@ endElement.addEventListener(
 // A refaire
 
 setInterval(() => {
+    today = new Date();
     const bar = document.getElementById('bar');
     const remain = document.getElementById('remain');
     if (today < start) {

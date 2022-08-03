@@ -2,38 +2,59 @@ const canvas = document.getElementById('canvas1');
 const context = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-class Chain {
-    constructor() {
-        this.Y = Math.random() * canvas.height;
-        this.X = Math.random() * canvas.width;
-    }
-    getLetter() {
-        // http://www.rikai.com/library/kanjitables/kanji_codes.unicode.shtml
-        /*
-    // Letters
-     if(Math.round(Math.random()) == 0)
-      return String.fromCharCode(Math.random() * 26 + 97)
-    else
-      return String.fromCharCode(Math.random() * 26 + 65)
-
-    // Binary
-    return `${Math.round(Math.random())}`;
- */
-        // Japanese
-        return String.fromCharCode(Math.random() * 86 + 0x30a1);
-    }
-    update() {
-        if (this.Y >= canvas.height) {
-            this.Y = 0;
-            this.X = Math.random() * canvas.width;
-        }
-        else
-            this.Y += 28;
+class Letter {
+    constructor(X, Y, letter, color) {
+        this.X = X;
+        this.Y = Y;
+        this.letter = letter;
+        this.color = color;
     }
     draw() {
         context.font = '30px serif';
-        context.fillStyle = '#00c407';
-        context.fillText(this.getLetter(), this.X, this.Y);
+        context.fillStyle = this.color;
+        context.fillText(this.letter, this.X, this.Y);
+    }
+}
+class Chain {
+    constructor(letters = []) {
+        this.letters = letters;
+        this.nbcarac = 20; // db 20
+        this.getLetter = () => String.fromCharCode(Math.random() * 86 + 0x30a1);
+        const X = Math.random() * canvas.width;
+        const Y = Math.random() * canvas.height;
+        for (let i = this.nbcarac; i > 0; i--)
+            letters.push(new Letter(X, Y + (28 * i), this.getLetter(), `hsl(120, 100%, ${((i + 1) * 100) / (this.nbcarac + 1)}%)`));
+    }
+    update() {
+        const saveLetters = this.letters.map((element) => element.letter);
+        this.letters.forEach((letter, index) => {
+            letter.Y += 28;
+            if (index !== 0)
+                letter.letter = saveLetters[index - 1];
+            else
+                letter.letter = this.getLetter();
+            if (letter.Y > canvas.height) {
+                letter.Y -= canvas.height;
+                if (index === 0) {
+                    const getCo = () => {
+                        let X = Math.random() * canvas.width << 0;
+                        while (X % (this.nbcarac * 3) !== 0)
+                            X--;
+                        if (!chains.every((chain) => chain.letters[0].X !== X)) {
+                            getCo();
+                            return undefined; // unreachable
+                        }
+                        return X;
+                    };
+                    letter.X = getCo();
+                }
+                else
+                    letter.X = this.letters[0].X;
+            }
+        });
+    }
+    draw() {
+        this.letters.forEach((letter) => letter.draw());
     }
 }
 const chains = [];
@@ -42,14 +63,16 @@ function init(nbChains) {
         chains.push(new Chain());
 }
 function animate() {
-    context.fillStyle = 'rgba(0, 0, 0, 0.06)';
-    context.fillRect(0, 0, canvas.width, canvas.height);
+    context.clearRect(0, 0, canvas.width, canvas.height);
     chains.forEach((element) => {
         element.update();
         element.draw();
     });
 }
-init(20);
-setInterval(animate, 25);
+init(15); // 15 db
+setInterval(animate, 50); // 100 db ; 50 modif
+window.addEventListener('resize', () => {
+    window.location.reload();
+});
 export {};
 //# sourceMappingURL=main.js.map

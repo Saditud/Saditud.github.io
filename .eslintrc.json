@@ -45,6 +45,12 @@
         "no-useless-constructor": "off", // clc
         "no-empty-function": "off", // la même
         "no-bitwise": "off",
-        "max-classes-per-file": "off"
+        "max-classes-per-file": "off",
+        "no-use-before-define": [
+            "error",
+            {
+                "variables": false
+            }
+        ]
     }
 }
