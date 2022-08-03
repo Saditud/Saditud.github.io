@@ -46,7 +46,7 @@ endElement.value = formatDate(end.toLocaleDateString());
 endElement.addEventListener('change', (e) => end = new Date(e.target.value));
 // A refaire
 setInterval(() => {
-    today = new Date();
+    today.setSeconds(today.getSeconds() + 1);
     const bar = document.getElementById('bar');
     const remain = document.getElementById('remain');
     if (today < start) {
