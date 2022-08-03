@@ -80,8 +80,8 @@ function animate() {
     });
 }
 
-init(15); // 15 db
-setInterval(animate, 50); // 100 db ; 50 modif
+init(30); // 15 db
+setInterval(animate, 60); // 100 db ; 60 modif
 
 window.addEventListener('resize', () => {
     window.location.reload();
