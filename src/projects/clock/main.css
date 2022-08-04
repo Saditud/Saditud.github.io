@@ -1,0 +1,12 @@
+body {
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f2e5d7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: #262322;
+}
