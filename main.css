@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
 * {
   padding: 0;
   margin: 0;
@@ -5,27 +7,89 @@
 }
 
 body {
-  background-color: white;
+  background-color: #151535;
 }
 
-#snow {
-  height: 100vh;
-}
-
-canvas {
-  height: 100%;
-  width: 100%;
-  background-color: black;
-}
-
-svg {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
+header {
+  height: calc(100vh - 6em);
   width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-h1 {
+h1,
+h2 {
+  font-family: Roboto;
+  font-size: 5em;
+  color: #ffee00;
+  letter-spacing: -0.03em;
+}
+
+#left {
+  width: 40%;
+}
+
+p {
+  font-family: Roboto;
+  font-size: 1.7em;
   color: white;
+  overflow-wrap: break-word;
+  font-weight: 400;
+}
+
+img {
+  height: 80%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1em;
+}
+
+.bigcontainer {
+  width: 100%;
+  border-top: #ffee0042 1px solid;
+}
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.smallcontainer {
+  border: black 0.1em solid;
+  background-color: #e40066;
+  border-radius: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 15em;
+  min-height: 5em;
+  margin: 0 10% 0 10%;
+}
+
+.smallcontainer p {
+  text-align: center;
+}
+
+h2 {
+  font-size: 3em;
+  margin-left: 1em;
+}
+
+button {
+  width: 4em;
+  height: 2em;
+  color: white;
+  background-color: #151535;
+  font-size: 1em;
+  border-radius: 0.5em;
+  border: none;
 }

@@ -8,43 +8,82 @@
     <title>Index</title>
   </head>
   <body>
-    <div id="snow">
-      <canvas id="canvas1"></canvas>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="white"
-          fill-opacity="1"
-          d="M0,64L24,96C48,128,96,192,144,213.3C192,235,240,213,288,202.7C336,192,384,192,432,181.3C480,171,528,149,576,144C624,139,672,149,720,133.3C768,117,816,75,864,85.3C912,96,960,160,1008,176C1056,192,1104,160,1152,176C1200,192,1248,256,1296,272C1344,288,1392,256,1416,240L1440,224L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z"
-        ></path>
-      </svg>
-    </div>
-    <ul>
-      <li>Projects</li>
-      <ul>
-        <li>
-          <a href="src/projects/pixel/index.html" target="_blank">Pixel Generator</a>
-        </li>
-        <li>
-          <a href="src/projects/loading/index.html" target="_blank">Loading</a>
-        </li>
-      </ul>
-      <li>Canvas</li>
-      <ul>
-        <li><a href="src/canvas/circle/main.html" target="_blank">Circle</a></li>
-        <li>
-          <a href="src/canvas/Fibonacci/main.html" target="_blank">Fibonacci</a>
-        </li>
-        <li>
-          <a href="src/canvas/particules/main.html" target="_blank">Particules</a>
-        </li>
-        <li><a href="src/canvas/snakes/index.html" target="_blank">Snakes</a></li>
-        <li><a href="src/canvas/matrix/main.html" target="_blank">Matrix</a></li>
-      </ul>
-      <li>API</li>
-      <ul>
-        <li><a href="src/API/nasa/index.html" target="_blank">Nasa</a></li>
-      </ul>
-    </ul>
+    <header>
+      <div id="left">
+        <h1>My Projects</h1>
+        <p>Each one of these projects has been used to learn things</p>
+        <p>Don't forget to hydrate</p>
+      </div>
+      <img src="./public/undraw_programming_re_kg9v.svg" alt="svg" />
+    </header>
+    <main>
+      <div class="bigcontainer">
+        <h2>Projects</h2>
+        <div class="row">
+          <div class="smallcontainer">
+            <p>Pixel Generator</p>
+            <a href="src/projects/pixel/index.html" target="_blank"
+              ><button>Visit</button></a
+            >
+          </div>
+          <div class="smallcontainer">
+            <p>Loading</p>
+            <a href="src/projects/loading/index.html" target="_blank"
+              ><button>Visit</button></a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="bigcontainer">
+        <h2>Canvas</h2>
+        <div class="row">
+          <div class="smallcontainer">
+            <p>Circle</p>
+            <a href="src/canvas/circle/main.html" target="_blank"
+              ><button>Visit</button></a
+            >
+          </div>
+          <div class="smallcontainer">
+            <p>Fibonacci</p>
+            <a href="src/canvas/Fibonacci/main.html" target="_blank"
+              ><button>Visit</button></a
+            >
+          </div>
+          <div class="smallcontainer">
+            <p>Particules</p>
+            <a href="src/canvas/particules/main.html" target="_blank"
+              ><button>Visit</button></a
+            >
+          </div>
+          <div class="smallcontainer">
+            <p>Matrix</p>
+            <a href="src/canvas/matrix/main.html" target="_blank"
+              ><button>Visit</button></a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="bigcontainer">
+        <h2>API / Library</h2>
+        <div class="row">
+          <div class="smallcontainer">
+            <p>Nasa</p>
+            <a href="src/API/nasa/index.html" target="_blank"
+              ><button>Visit</button></a
+            >
+          </div>
+          <div class="smallcontainer">
+            <p>Snakes</p>
+            <a href="src/API/snakes/index.html" target="_blank"
+              ><button>Visit</button></a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="bigcontainer"></div>
+    </main>
   </body>
-  <script src="./js/main.js"></script>
+  <script type="module" src="./js/main.js"></script>
 </html>
