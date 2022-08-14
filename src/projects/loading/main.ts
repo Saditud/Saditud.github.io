@@ -5,7 +5,7 @@ function getPC(start: Date, end: Date, today: Date) {
     return res > 100 ? 100 : res;
 }
 
-function getTimeLeft(end: Date, today: Date) {
+function getTimeLeft(end: Date, today: Date): string {
     let mili = (end.getTime() - today.getTime()) / 1000 << 0;
     const tab = [`${mili / 86400 << 0}d`];
     mili %= 86400;
