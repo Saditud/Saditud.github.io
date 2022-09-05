@@ -17,10 +17,9 @@ function getTimeLeft(end, today) {
         ? `0${element}`
         : element)).join(' ');
 }
-let start = new Date('06/20/2022');
+let start = new Date('09/02/2022');
 let today = new Date();
-let end = new Date('09/02/2022');
-// vacances
+let end = new Date('09/02/2023');
 function formatDate(date) {
     const tmp = date.split('/').map((element) => (element.length <= 1
         ? `0${element}`
