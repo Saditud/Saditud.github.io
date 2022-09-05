@@ -18,9 +18,9 @@ function getTimeLeft(end: Date, today: Date): string {
         : element)).join(' ');
 }
 
-let start = new Date('06/20/2022');
+let start = new Date('09/02/2022');
 let today = new Date();
-let end = new Date('09/02/2022');
+let end = new Date('09/02/2023');
 // vacances
 
 function formatDate(date: string) {
