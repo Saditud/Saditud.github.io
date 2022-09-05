@@ -21,7 +21,6 @@ function getTimeLeft(end: Date, today: Date): string {
 let start = new Date('09/02/2022');
 let today = new Date();
 let end = new Date('09/02/2023');
-// vacances
 
 function formatDate(date: string) {
     const tmp = date.split('/').map((element) => (element.length <= 1
