@@ -1,5 +1,5 @@
-const LTDate = '2022-07-01';
-const LTHour = '16:00';
+const LTDate = '2022-10-01';
+const LTHour = '17:00';
 document.getElementById('inputDate').value = LTDate;
 document.getElementById('inputTime').value = LTHour;
 const lastTime = new Date(`${LTDate}T${LTHour}`);

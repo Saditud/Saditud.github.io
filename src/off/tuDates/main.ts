@@ -1,7 +1,7 @@
 export {};
 
-const LTDate = '2022-07-01';
-const LTHour = '16:00';
+const LTDate = '2022-10-01';
+const LTHour = '17:00';
 
 (<HTMLInputElement>document.getElementById('inputDate')).value = LTDate;
 (<HTMLInputElement>document.getElementById('inputTime')).value = LTHour;
